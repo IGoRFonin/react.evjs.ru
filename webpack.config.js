@@ -16,7 +16,10 @@ module.exports = {
       path: '/api/',
       target: 'http://localhost:8090'
     }],
-    historyApiFallback: true
+    historyApiFallback: {
+      index: '/public/index.html'
+    },
+    publicPath: path.join(__dirname, 'public')
   },
   module: {
     rules: [
@@ -30,7 +33,7 @@ module.exports = {
         exclude: path.resolve(__dirname, "node_modules"),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader', 'sass-loader'],
         })
       }
     ]

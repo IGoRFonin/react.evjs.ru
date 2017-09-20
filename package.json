@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "body-parser": "^1.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -27,7 +28,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run dev\" \"npm run api\"",
+    "api": "node server/server.js",
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

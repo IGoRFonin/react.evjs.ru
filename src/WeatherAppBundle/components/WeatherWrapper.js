@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Today from './Today'
 
 class WeatherWrapper extends Component {
-
-  state = {
-    wType: {
-      sun: 123
-    }
-  }
 
   render() {
     return (

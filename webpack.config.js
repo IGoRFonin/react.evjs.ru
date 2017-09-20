@@ -1,6 +1,17 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
+var cssLoader = process.env.NODE_ENV === 'production' ?
+  ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: ['css-loader', 'sass-loader'],
+  }) : ['style-loader', 'css-loader', 'sass-loader'];
+
+var cssPlugin = process.env.NODE_ENV === 'production' ?
+  new ExtractTextPlugin({
+    filename: 'bundle.css',
+    allChunks: true
+  }) : function(){return};
 module.exports = {
   devtool:'sourse-map',
   entry: [
@@ -31,17 +42,11 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: path.resolve(__dirname, "node_modules"),
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        })
+        use: cssLoader
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: 'bundle.css',
-      allChunks: true
-    })
+    cssPlugin
   ]
 }

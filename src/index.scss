@@ -97,13 +97,16 @@ date {
   }
   // .card__intro
   @include e('intro') {
-    margin-bottom: 8rem;
+    height: 8rem;
+    line-height: 8rem;
     @include mq(md){
-      margin-bottom:16rem;
+      height:16rem;
+      line-height: 16rem;
     }
     display:flex;
     flex-flow:row wrap;
     justify-content:space-between;
+    text-align: center;
   }
   // .card__title
   @include e('title') {
@@ -111,22 +114,6 @@ date {
     text-shadow: 1px 1px 1px rgba(0,0,0,.3);
     padding:20px 0 0 20px;
     margin:0;
-    @include mq(md){
-      width: 70%;
-    }
-  }
-  // .card__meta
-  @include e('meta') {
-    width: 100%;
-    text-align: left;
-    padding:0px 0 0 20px;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    font-size: 1.125rem;
-    @include mq(md){
-      width: 30%;
-      text-align: right;
-      padding:20px 20px 0 0;
-    }
   }
   // .card__options
   @include e('options') {

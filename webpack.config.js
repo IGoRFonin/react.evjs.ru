@@ -12,6 +12,7 @@ module.exports = {
     publicPath: '/static/'
   },
   devServer: {
+    open: true,
     proxy: [{
       path: '/api/',
       target: 'http://localhost:8090'
@@ -19,7 +20,6 @@ module.exports = {
     historyApiFallback: {
       index: '/public/index.html'
     },
-    publicPath: path.join(__dirname, 'public')
   },
   module: {
     rules: [
@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'build.css',
+      filename: 'bundle.css',
       allChunks: true
     })
   ]

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import City from './components/City';
-import Weather from './components/Weather';
+import Header from './components/Header';
+import WeatherWrapper from './components/WeatherWrapper';
 
 class WeatherApp extends Component {
   render() {
     return (
-        <div className="card">
-          <City />
-          <Weather />
-        </div>
+        <section className="container">
+          <Header />
+          <WeatherWrapper />
+        </section>
     )
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Today from './Today'
 
-class Weather extends Component {
+class WeatherWrapper extends Component {
 
   state = {
     wType: {
@@ -105,4 +105,4 @@ class Weather extends Component {
   }
 }
 
-export default Weather;
+export default WeatherWrapper;

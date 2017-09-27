@@ -5,8 +5,7 @@ import Header from './components/Header';
 import WeatherWrapper from './components/WeatherWrapper';
 import store from './store'
 
-class WeatherApp extends Component {
-  render() {
+function WeatherApp(){
     return (
       <Provider store={store}>
         <section className="container">
@@ -15,7 +14,6 @@ class WeatherApp extends Component {
         </section>
       </Provider>
     )
-  }
 }
 
 export default WeatherApp

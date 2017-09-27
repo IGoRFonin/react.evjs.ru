@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { loadWeather } from '../AC'
 
 class WeatherWrapper extends Component {
+  
 
+  componentDidMount() {
+    const { weather, loadWeather, currentCity } = this.props;
+
+    if(Object.keys(weather).length === 0) {
+      loadWeather(currentCity);
+    }
+  }
   render() {
+    console.log(this.props);
     return (
       <section className="week-days">
         <div className="row">
@@ -98,4 +109,10 @@ class WeatherWrapper extends Component {
   }
 }
 
-export default WeatherWrapper;
+export default connect((state) => {
+  const { weather, currentCity } = state;
+  return {
+    weather,
+    currentCity
+  }
+}, { loadWeather })(WeatherWrapper);

@@ -1,4 +1,4 @@
-import { CHOOSE_CITY, LOAD_16_WEATHER, APPID, START, SUCCESS, ERROR, CURRENT_WEATHER_LOAD } from '../constants'
+import { CHOOSE_CITY, LOAD_WEATHER, APPID, START, SUCCESS, ERROR, CURRENT_WEATHER_LOAD } from '../constants'
 import fetch from 'isomorphic-fetch';
 
 export function changeCity(id) {
@@ -10,10 +10,11 @@ export function changeCity(id) {
 
 export function loadWeather(id) {
   return {
-    type: LOAD_16_WEATHER
+    type: LOAD_WEATHER,
     payload: { id },
-    callAPI: `http://api.openweathermap.org/data/2.5/forecast/daily?id=${id}&APPID=${APPID}`
+    callAPI: `http://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=${APPID}`
   }
+
 }
 
 export function loadCurrentWeather(id) {

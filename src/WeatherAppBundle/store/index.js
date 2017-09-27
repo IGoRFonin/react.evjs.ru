@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import api from '../middlewares/api'
 
-const enhancer = applyMiddleware(thunk, api, logger);
+const enhancer = applyMiddleware(thunk, api, /*logger*/);
 
 const store = createStore(reducer, {}, composeWithDevTools(enhancer));
 

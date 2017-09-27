@@ -14,7 +14,6 @@ export function loadWeather(id) {
     payload: { id },
     callAPI: `http://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=${APPID}`
   }
-
 }
 
 export function loadCurrentWeather(id) {

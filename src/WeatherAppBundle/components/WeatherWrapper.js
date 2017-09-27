@@ -16,7 +16,6 @@ class WeatherWrapper extends Component {
   }
 
   getWeather(obj) {
-    console.log(obj);
     let list = [];
     for(let day in obj) {
       list.push(<Day key={day} day={obj[day]} />);

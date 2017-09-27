@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import { formatTemperature, getMidTemperature} from '../helper'
+
 
 function Day({ day }, ...arg) {
 
-  var midDay = getMidTemperature(day);
-  console.log(midDay);
+  const midDay = getMidTemperature(day);
   return (
     <div className="sm-days columns">
       <div className="day">
@@ -19,26 +20,6 @@ function Day({ day }, ...arg) {
       </div>
     </div>
   )
-}
-
-function formatTemperature(temp) {
-  if(temp > 120) {
-    return (++temp - 273.15).toFixed(0);
-  }
-
-  return temp;
-}
-
-function getMidTemperature(day) {
-  var arr = Object.keys(day)
-
-  if(arr.length === 1) {
-    return day[arr[0]]
-  } 
-  
-  return Number.isInteger(arr.length / 2) ? 
-    day[arr[(arr.length / 2) - 1]] : 
-    day[arr[((arr.length - 1) / 2) - 1]];
 }
 
 Day.propTypes = {

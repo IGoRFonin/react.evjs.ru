@@ -1,7 +1,7 @@
 export const APPID = '0cce8eff76defccf3963519033d09be1';
 
 export const CHOOSE_CITY = 'CHOOSE_CITY';
-export const LOAD_WEATHER = 'LOAD_16_WEATHER';
+export const LOAD_WEATHER = 'LOAD_WEATHER';
 export const CURRENT_WEATHER_LOAD = 'CURRENT_WEATHER_LOAD';
 
 export const START = '_START';

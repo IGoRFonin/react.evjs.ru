@@ -61,7 +61,7 @@ $bounceInOut: cubic-bezier(1,-1.25,0,1.75);
     width: 33.33%
   } 
   &.sm-days {
-    width: 14.28%;
+    width: 20%;
     opacity: 0;
     @extend .fadeIn;
   }

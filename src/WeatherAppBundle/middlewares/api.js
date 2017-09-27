@@ -2,9 +2,9 @@ import { SUCCESS, ERROR } from '../constants'
 
 export default store => next => action => {
   const { callAPI, type, ...rest } = action;
-  console.log(callAPI);
+  
   if(!callAPI) return next(action);
-
+  console.log(callAPI);
   
   fetch(callAPI)
     .then(res => res.json())

@@ -5,9 +5,13 @@ import { CHOOSE_CITY, LOAD_WEATHER,
 import fetch from 'isomorphic-fetch';
 
 export function changeCity(id) {
-  return {
-    type: CHOOSE_CITY,
-    payload: { id }
+  return (dispatch) => {
+    dispatch({
+      type: CHOOSE_CITY,
+      payload: { id }
+    });
+
+    dispatch(loadWeather(id));
   }
 }
 

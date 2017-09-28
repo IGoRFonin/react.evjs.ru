@@ -25,3 +25,7 @@ export function getMidTemperature(day) {
     day[arr[(arr.length / 2) - 1]] : 
     day[arr[((arr.length - 1) / 2) - 1]];
 }
+
+export function weatherType(id, obj) {
+  return obj[parseInt(id/10)*10];
+}

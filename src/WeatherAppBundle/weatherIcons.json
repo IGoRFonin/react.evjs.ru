@@ -1,0 +1,9 @@
+{
+  "100": "wi-day-sunny",
+  "200": "wi-day-thunderstorm",
+  "300": "wi-day-rain-mix",
+  "500": "wi-day-rain",
+  "600": "wi-day-snow",
+  "700": "wi-smoke",
+  "800": "wi-cloud"
+}

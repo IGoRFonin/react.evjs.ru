@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
-import { formatTemperature, getMidTemperature} from '../helper'
+import PropTypes from 'prop-types';
+import { formatTemperature, getMidTemperature, weatherType} from '../helper';
 import Moment from 'moment';
+import icons from '../weatherIcons';
 
 
 class Header extends Component {
@@ -33,7 +34,7 @@ class Header extends Component {
           </div>
           
           <div className="sm-four columns current-city-weather">
-            <i className={"wi wi-day-showers"}></i>
+            <i className={"wi " + weatherType(weather.weather[0].id, icons)}></i>
           </div>
           
           <div className="sm-four columns current-city-temp">

@@ -6,20 +6,34 @@ import Moment from 'moment';
 
 
 class Header extends Component {
+  state = {
+    city: 'London'
+  }
+
+  cityHandler = (event) => {
+    this.setState({
+      city: event.target.value
+    })
+  }
+
   render() {
     const {weather, currentCity} = this.props;
+    const {city} = this.state
 
     if (Object.keys(weather).length === 0) return null;
+  
     return (
       <header>
         <div className="row">
           
           <div className="sm-four columns current-city-name">
-            <h2>London</h2>
+            <input className="city" type="text"
+             value={city}
+             onChange={this.cityHandler}/>
           </div>
           
           <div className="sm-four columns current-city-weather">
-            <i className="wi wi-day-showers"></i>
+            <i className={"wi wi-day-showers"}></i>
           </div>
           
           <div className="sm-four columns current-city-temp">

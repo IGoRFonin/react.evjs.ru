@@ -219,3 +219,21 @@ sup {
 @for $i from 1 through 7 {
   .sm-days:nth-child(#{$i}) { animation-delay: 0.2 * $i + s; }
 }
+
+
+.city {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  outline: none;
+}

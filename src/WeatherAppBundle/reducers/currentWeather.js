@@ -1,4 +1,4 @@
-import { LOAD_WEATHER, SUCCESS } from '../constants.js'
+import { LOAD_WEATHER, SUCCESS, CHANGE_DAY } from '../constants.js'
 let time = new Date();
 time.setHours(0);
 time.setMinutes(0);
@@ -12,6 +12,8 @@ export default function(state = secs, action) {
   switch(action.type) {
     case LOAD_WEATHER + SUCCESS:
       return state;
+    case CHANGE_DAY:
+      return action.payload.time;
   }
   return state;
 }

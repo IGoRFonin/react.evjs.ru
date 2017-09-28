@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Moment from 'moment';
 import { formatTemperature, getMidTemperature} from '../helper'
+import { changeDay } from '../AC'
 
-
-function Day({ day }, ...arg) {
-
+const Day = ({ day, time, dispatch }, ...arg) => {
   const midDay = getMidTemperature(day);
   return (
-    <div className="sm-days columns">
+    <div className="sm-days columns" onClick={ (e) => dispatch(changeDay(time))}>
       <div className="day">
         {Moment(midDay.dt_txt).format('ddd')}
       </div>
@@ -26,4 +26,4 @@ Day.propTypes = {
   
 }
 
-export default Day
+export default connect()(Day);

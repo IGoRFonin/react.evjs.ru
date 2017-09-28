@@ -1,4 +1,7 @@
-import { CHOOSE_CITY, LOAD_WEATHER, APPID, START, SUCCESS, ERROR, CURRENT_WEATHER_LOAD } from '../constants'
+import { CHOOSE_CITY, LOAD_WEATHER, 
+  APPID, START, 
+  SUCCESS, ERROR, 
+  CHANGE_DAY } from '../constants'
 import fetch from 'isomorphic-fetch';
 
 export function changeCity(id) {
@@ -16,10 +19,9 @@ export function loadWeather(id) {
   }
 }
 
-export function loadCurrentWeather(id) {
+export const changeDay = (time) => {
   return {
-    type: CURRENT_WEATHER_LOAD,
-    payload: { id },
-    callAPI: `http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=${APPID}`
+    type: CHANGE_DAY,
+    payload: { time }
   }
 }

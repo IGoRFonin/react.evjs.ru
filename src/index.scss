@@ -104,8 +104,8 @@ html {
 }
 
 body {
-  background: url(https://unsplash.imgix.net/23/pink-sky.JPG?fit=crop&fm=jpg&h=700&q=75&w=1050) center center / cover fixed;
-  color: $white;
+  // background: url(https://unsplash.imgix.net/23/pink-sky.JPG?fit=crop&fm=jpg&h=700&q=75&w=1050) center center / cover fixed;
+  color: #000;
   font-family: $font-stack;
   font-size: 1.5rem;
   line-height: 1.6;
@@ -266,4 +266,8 @@ sup {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   outline: none;
+}
+
+.weather-app {
+  color: $white;
 }

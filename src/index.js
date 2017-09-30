@@ -6,18 +6,25 @@ import {
   Switch,
   NavLink
 } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
 import HomeApp from './HomeBundle/HomeApp';
 import WeatherApp from './WeatherAppBundle/WeatherApp';
 import './index.scss';
 
 function App() {
+  let activeStyle = {
+    fontWeight: 'bold',
+    color: 'red'
+   };
   return (
     <Router>
       <div>
-        <ul>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/weather">Weather</NavLink>
-        </ul>
+        <div className="header">
+          <Menu isOpen={false}>
+            <NavLink exact to="/" activeClassName="active">Home</NavLink>
+            <NavLink to="/weather" activeClassName="active">Weather</NavLink>
+          </Menu>
+        </div>
         <Switch>
           <Route exact path='/' component={HomeApp}/>
           <Route path='/weather' component={WeatherApp}/>

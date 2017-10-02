@@ -23,7 +23,7 @@ module.exports = {
     publicPath: '/static/'
   },
   devServer: {
-    open: true,
+    // open: true,
     proxy: [{
       path: '/api/',
       target: 'http://localhost:8090'
@@ -31,6 +31,7 @@ module.exports = {
     historyApiFallback: {
       index: '/public/index.html'
     },
+    clientLogLevel: "error"
   },
   module: {
     rules: [

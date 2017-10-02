@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
+import blocks from './blocks';
+import dragElement from './dragElement';
 
-export default combineReducers({
-
+const rootReducer = combineReducers({
+  blocks,
+  dragElement
 });
+
+export default rootReducer;

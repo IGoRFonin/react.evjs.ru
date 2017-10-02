@@ -7,23 +7,25 @@ import {
 
 const blocks = (state = [], action) => {
   const newBlocks = [];
+  
   switch(action.type) {
     case APP_LOADED:
+      const { blocks } = action.payload;
       state.forEach((block, i) => {
         newBlocks[i] = {
           ...block,
-          top: action.blocks.filter(b => b.id == block.id ? b.top : false)[0].top
+          top: blocks.filter(b => b.id == block.id ? b.top : false)[0].top
         };
       });
 
       return newBlocks;
     case BLOCK_DRAG + START:
-      state.forEach((block, i) => {
-        newBlocks[i] = {
+      return state.map((block,i) => {
+        return {
           ...block,
-          isDrag:block.id === action.id ? true : false};
+          isDrag:block.id === action.id ? true : false
+        }
       });
-      return newBlocks;
     case BLOCK_DRAG:
       if(action.clientY === 0) return state;
       state.forEach((block, i) => {
@@ -43,9 +45,10 @@ const blocks = (state = [], action) => {
       });
 
       return newBlocks;
-    default:
-      return state;
   }
+
+
+  return state;
 }
 
 export default blocks;

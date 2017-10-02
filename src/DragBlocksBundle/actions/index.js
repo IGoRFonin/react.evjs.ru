@@ -2,7 +2,8 @@ import {
     BLOCK_DRAG,
     START,
     END,
-    ERROR
+    ERROR,
+    APP_LOADED
 } from '../constants';
 
 const dispatchProps = (dispatch) => {
@@ -28,7 +29,14 @@ const dispatchProps = (dispatch) => {
                 type: BLOCK_DRAG + END,
                 id
             })
+        },
+        appLoaded: (blocks) => {
+            dispatch({
+                type: APP_LOADED,
+                payload: {blocks}
+            })           
         }
+
     }
 }
 

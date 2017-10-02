@@ -3,15 +3,25 @@ import { connect } from 'react-redux';
 import PrevBlock from '../components/PrevBlock';
 import Logo from '../components/Logo';
 import dispatchProps from '../actions';
+import { APP_LOADED } from '../constants';
 
 class PrevList extends Component {
+  componentDidMount() {
+    let elements = document.querySelectorAll('.blocks-nav__item');
+    let blocks = [].slice.call(elements).map(item => {
+        return {
+          id: item.dataset.id,
+          top: item.offsetTop
+        };
+      });
+    this.props.appLoaded(blocks);
+  }
   render() {
     const { 
       blocks, 
       onDragStart, 
       onDrag,
       onDragEnd } = this.props;
-      console.log(this.props);
     return(
         <div className="left">
             <Logo />

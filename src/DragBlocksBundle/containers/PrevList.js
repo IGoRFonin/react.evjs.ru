@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PrevBlock from '../components/PrevBlock';
 import Logo from '../components/Logo';
 import dispatchProps from '../actions';
-import { APP_LOADED } from '../constants';
+import { blocksSelector } from '../selectors';
 
 class PrevList extends Component {
   componentDidMount() {
@@ -22,23 +22,25 @@ class PrevList extends Component {
       onDragStart, 
       onDrag,
       onDragEnd } = this.props;
+      console.log('--- render PREV');
     return(
         <div className="left">
             <Logo />
             <ul className="blocks-nav">
                 {blocks.map(block => (
                 <PrevBlock 
-                    key={block.id} 
+                    key={block.get('id')} 
                     block={block} 
-                    onDragStart={() => onDragStart(block.id)}
+                    onDragStart={() => onDragStart(block.get('id'))}
                     onDrag={(e) => {
+
                       onDrag({
-                        id:block.id,
+                        id:block.get('id'),
                         clientY:e.clientY,
                         width: e.target.offsetWidth
                       })
                     }}
-                    onDragEnd={() => onDragEnd(block.id)}
+                    onDragEnd={() => onDragEnd(block.get('id'))}
                     />
                 ) )}
             </ul>
@@ -49,7 +51,7 @@ class PrevList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    blocks: state.blocks,
+    blocks: blocksSelector(state),
   }
 }
 

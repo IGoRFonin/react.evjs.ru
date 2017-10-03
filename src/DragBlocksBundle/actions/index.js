@@ -3,7 +3,7 @@ import {
     START,
     END,
     ERROR,
-    APP_LOADED
+    CHANGE_TOP
 } from '../constants';
 
 const dispatchProps = (dispatch) => {
@@ -12,28 +12,30 @@ const dispatchProps = (dispatch) => {
             
             dispatch({
                 type: BLOCK_DRAG + START,
-                id
+                payload: { id }
             })
         },
         onDrag: ({id, clientY, width}) => {
             
             dispatch({
                 type: BLOCK_DRAG,
-                id,
-                clientY,
-                width
+                payload: {
+                            id,
+                            clientY,
+                            width
+                         }
             })
         },
         onDragEnd: (id) => {
             dispatch({
                 type: BLOCK_DRAG + END,
-                id
+                payload: { id }
             })
         },
         appLoaded: (blocks) => {
             dispatch({
-                type: APP_LOADED,
-                payload: {blocks}
+                type: CHANGE_TOP,
+                payload: { blocks }
             })           
         }
 

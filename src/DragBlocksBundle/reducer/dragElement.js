@@ -4,9 +4,9 @@ import {
 } from '../constants';
 
 const dragElement = (state = {}, action) => {
-  const { id, clientY, width } = action;
   switch(action.type) {
     case BLOCK_DRAG:
+    const { id, clientY, width } = action.payload;
       return {
         id,
         top:clientY,

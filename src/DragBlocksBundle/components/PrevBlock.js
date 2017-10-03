@@ -9,7 +9,7 @@ const PrevBlock = ({
   const { isDrag } = block;
   const classes = isDrag ? ' hidden-opacity':'';
   return(
-  <li data-id={block.id} 
+  <li data-id={block.get('id')} 
     className={`blocks-nav__item ${classes}`}
     onDragStart={onDragStart}
     onDrag={onDrag} 

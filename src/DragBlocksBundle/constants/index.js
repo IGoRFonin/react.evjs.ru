@@ -1,6 +1,6 @@
 
 export const BLOCK_DRAG = 'BLOCK_DRAG';
-export const APP_LOADED = 'APP_LOADED';
+export const CHANGE_TOP = 'CHANGE_TOP';
 
 export const START = "_START";
 export const END = "_END";

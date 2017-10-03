@@ -37,7 +37,7 @@ class Header extends Component {
       this.setState({
         focused: false
       });
-    }, 1000);
+    }, 300);
     
   }
   componentWillReceiveProps(nextProps) {

@@ -16,13 +16,16 @@ class PrevList extends Component {
       });
     this.props.appLoaded(blocks);
   }
+  componentWillReceiveProps(nextProps) {
+    // console.log(this.props, nextProps);
+  }
   render() {
     const { 
       blocks, 
       onDragStart, 
       onDrag,
       onDragEnd } = this.props;
-      console.log('--- render PREV');
+      // console.log('--- render PREV');
     return(
         <div className="left">
             <Logo />

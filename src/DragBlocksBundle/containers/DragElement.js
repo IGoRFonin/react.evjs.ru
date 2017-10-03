@@ -13,7 +13,7 @@ class DragElement extends Component {
   render() {
     const { dragElement } = this.props;
     if(!(dragElement.id !== undefined && dragElement.top != 0)) return null;
-    console.log('render');
+    // console.log('render');
     return (
       <li
         style={{

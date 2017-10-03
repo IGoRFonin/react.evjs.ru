@@ -6,7 +6,7 @@ const PrevBlock = ({
   onDrag,
   onDragEnd
 }) => {
-  const { isDrag } = block;
+  const isDrag = block.get('isDrag');
   const classes = isDrag ? ' hidden-opacity':'';
   return(
   <li data-id={block.get('id')} 
@@ -16,7 +16,9 @@ const PrevBlock = ({
     onDragEnd={onDragEnd} 
     draggable="true" 
     >
-      <div className="block-line"></div>
+      <div className="block-line">
+        <span className="block-line-id">{block.get('id')}</span>
+      </div>
   </li>
   )
 }

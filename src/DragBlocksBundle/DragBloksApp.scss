@@ -75,6 +75,7 @@
 }
 
 .blocks-nav__item {
+  position: relative;
   display: block;
   padding: 15px 0;
   margin: 10px 0;
@@ -90,7 +91,14 @@
   border-radius:5px;;
 }
 
+.block-line-id {
+  position:absolute;
+  top:0;
+  font-size: 10px;
+}
+
 .blocks-content__item {
+  position:relative;
   width: 100%;
   height: 100px;
   background: #ccc;

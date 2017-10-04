@@ -22,7 +22,9 @@ const blocks = (state = defaultState, action) => {
       const { blocks } = action.payload;
 
       return state.update((mapObj, i) => mapObj.map((val) => 
-        val.set('top', blocks.find(b => b.id === val.get('id').toString()).top)));
+        val.set('top', blocks.find(b => b.id === val.get('id').toString()).top)
+        .set('topD', blocks.find(b => b.id === val.get('id').toString()).topD)
+        ));
       
     
     // start draging block
@@ -64,8 +66,10 @@ const blocks = (state = defaultState, action) => {
         
          if(!(newState.findKey(block => block.get('id').toString() === id.toString()))) {
           return newState.setIn([newState.findKey(b => b.get('id') === nextID), 'top'], dragableBlock.get('top'))
+                          .setIn([newState.findKey(b => b.get('id') === nextID), 'topD'], dragableBlock.get('topD'))
                           .insert(state.findKey(b => b.get('id') === nextID), dragableBlock)
-                          .setIn([state.findKey(b => b.get('id') === nextID), 'top'], state.getIn([state.findKey(b => b.get('id') === nextID), 'top']));
+                          .setIn([state.findKey(b => b.get('id') === nextID), 'top'], state.getIn([state.findKey(b => b.get('id') === nextID), 'top']))
+                          .setIn([state.findKey(b => b.get('id') === nextID), 'topD'], state.getIn([state.findKey(b => b.get('id') === nextID), 'topD']));
          }
 
       } else if(prevEntity !== undefined && clientY < prevEntity.get('top')) {
@@ -74,8 +78,10 @@ const blocks = (state = defaultState, action) => {
 
         if(!(newState.findKey(block => block.get('id').toString() === id.toString()))) {
           return newState.setIn([newState.findKey(b => b.get('id') === prevID), 'top'], dragableBlock.get('top'))
+                          .setIn([newState.findKey(b => b.get('id') === prevID), 'topD'], dragableBlock.get('topD'))
                           .insert(newState.findKey(b => b.get('id') === prevID), dragableBlock)
-                          .setIn([newState.findKey(b => b.get('id') === prevID), 'top'], state.getIn([state.findKey(b => b.get('id') === prevID), 'top']));
+                          .setIn([newState.findKey(b => b.get('id') === prevID), 'top'], state.getIn([state.findKey(b => b.get('id') === prevID), 'top']))
+                          .setIn([newState.findKey(b => b.get('id') === prevID), 'topD'], state.getIn([state.findKey(b => b.get('id') === prevID), 'topD']));
          }
       }
 

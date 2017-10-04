@@ -11,7 +11,8 @@ class PrevList extends Component {
     let blocks = [].slice.call(elements).map(item => {
         return {
           id: item.dataset.id,
-          top: item.offsetTop
+          top: item.offsetTop,
+          topD: document.querySelector('.blocks-content__item[data-id="'+item.dataset.id+'"]').offsetTop
         };
       });
     this.props.appLoaded(blocks);

@@ -13,9 +13,9 @@
     *zoom: 1;
 }
 .drag_blocks {
-  width: 100%;
-  height: 570px;
-  overflow:hidden;
+  width: 99%;
+  // height: 570px;
+  // overflow:hidden;
   margin: 10px;
 }
 
@@ -97,6 +97,11 @@
   font-size: 10px;
 }
 
+.blocks-content {
+  position: relative;
+  padding-top: 10px;
+}
+
 .blocks-content__item {
   position:relative;
   width: 100%;
@@ -105,6 +110,11 @@
   margin: 10px 0;
   border-radius: 5px;
 }
+
+.blocks-content__item.absolute {
+  position: absolute;
+}
+
 .blocks-content__item:first-child {
   margin-top: 0;
 }

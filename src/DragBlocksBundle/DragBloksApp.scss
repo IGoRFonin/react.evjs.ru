@@ -72,6 +72,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 370px;
 }
 
 .blocks-nav__item {
@@ -82,6 +83,11 @@
   background: #d3d5de;
   border-radius:5px;
   cursor:pointer;
+}
+
+.blocks-nav__item.absolute {
+  position:absolute;
+  width: 330px;
 }
 .block-line {
   background: #9a9dac;
